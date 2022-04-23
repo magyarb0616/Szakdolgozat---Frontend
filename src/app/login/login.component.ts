@@ -7,6 +7,7 @@ import { LoginResponse } from '../model/loginResponse';
 import { LoginService } from '../service/login.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,12 +27,17 @@ export class LoginComponent implements OnInit {
     private countryService: CountryServiceService,
     private cityService: CityService,
     private loginService: LoginService,
-    private httpClient: HttpClient) {
+    private httpClient: HttpClient,
+    private router: Router) {
 
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem("isLogged")==="true"){
+      this.router.navigate(['home']);
+    }
     this.getCountries();
+
   }
 
   public signUpHandler(data :any){
@@ -42,6 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   public loginHandler(data :any){
+    localStorage.setItem("isLogged", "false");
     this.loginService.login(data).subscribe(result => {
       this.logindata = result;
       console.log("Login successfull.");
@@ -56,8 +63,10 @@ export class LoginComponent implements OnInit {
       } else {
         localStorage.setItem("admin","false")
       }
+      localStorage.setItem("isLogged", "true");
+      //console.log(localStorage.getItem("admin"));
+      this.router.navigate(['home']);
 
-      console.log(localStorage.getItem("admin"));
     })
   }
 
