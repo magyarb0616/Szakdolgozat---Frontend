@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CountryServiceService } from '../service/country-service.service';
+import { CountryServiceService } from '../service/country.service';
 import { CityService } from '../service/city.service';
 import { Country } from '../model/Country';
 import { City } from '../model/City';

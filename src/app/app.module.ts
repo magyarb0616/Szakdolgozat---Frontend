@@ -29,6 +29,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LikesComponent } from './likes/likes/likes.component';
+import { FooterComponent } from './footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LikesComponent } from './likes/likes/likes.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    LikesComponent
+    LikesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
