@@ -23,9 +23,17 @@ export class LikesComponent implements OnInit {
 loadLikedPets(){
   this.matchService.getLikedPets().subscribe(response => {
     this.pets = response;
-    console.log(this.pets[0].name);
   })
 }
+
+deleteLike(id: string){
+this.matchService.deleteMatch(id).subscribe(response => {
+  //console.log(response);
+})
+this.loadLikedPets();
+this.loadLikedPets();
+}
+
 
 
 }

@@ -31,6 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LikesComponent } from './likes/likes/likes.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { JwtInterceptor } from './helpers/jwtInterceptor';
+import { ProfileComponent } from './profile/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { JwtInterceptor } from './helpers/jwtInterceptor';
     HomeComponent,
     NavbarComponent,
     LikesComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
