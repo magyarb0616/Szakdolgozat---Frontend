@@ -8,9 +8,15 @@ html {
 }
 
 body{
-
+    background-image: linear-gradient(to right, #fed9b7 , #fdfcdc);
     height: 100vh;
     width: 100%;
     margin: 0px;
     padding: 0px;
 }
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+ 
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';

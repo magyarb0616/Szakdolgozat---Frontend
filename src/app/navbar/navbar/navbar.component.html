@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light" >
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">Petadopt</a>
+    <a class="navbar-brand" routerLink="/home">Petadopt</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -18,10 +18,10 @@
     >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="home">Home</a>
+          <a class="nav-link active" routerLink="/home"><i class="fas fa-home"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="likes">Likes</a>
+          <a class="nav-link active" routerLink="/likes">Likes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">Search</a>
@@ -30,7 +30,8 @@
           <a class="nav-link active" href="#">Profile</a>
         </li>
       </ul>
-      <a class="nav-item" href (click)="logOut()"> Log out </a>
+     
+      <a class="btn btn-primary btn-rounded" style="background: linear-gradient(to right, #0081a7, #00afb9);" (click)="logOut()" role="button">Log Out</a>
     </div>
   </div>
 </nav>

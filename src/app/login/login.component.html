@@ -25,7 +25,7 @@
 
                 <select name="city" required ngModel>
                   <option disabled selected>Choose a city.</option>
-                  <option *ngFor="let city of cities" [ngValue]="city"
+                  <option *ngFor="let city of cities" [ngValue]="city.id"
                   [value]="city.id">
                   {{city.name}}
                 </select>

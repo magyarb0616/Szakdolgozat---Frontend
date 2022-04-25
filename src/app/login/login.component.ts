@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   public loginHandler(data :any){
+    localStorage.clear;
     localStorage.setItem("isLogged", "false");
     this.loginService.login(data).subscribe(result => {
       this.logindata = result;

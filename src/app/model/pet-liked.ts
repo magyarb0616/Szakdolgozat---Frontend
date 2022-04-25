@@ -1,5 +1,7 @@
-export interface Pet {
+export interface PetLiked {
     id:          string;
+    petId:       string;
+    adopterId:   string;
     adoptiveId:  string;
     name:        string;
     age:         string;
@@ -15,4 +17,15 @@ export interface Pet {
     cityId:      string;
     cityName:    string;
     countryName: string;
+}
+
+// Converts JSON strings to/from to petLiked
+export class Convert {
+    public static toPetLiked(json: string): PetLiked {
+        return JSON.parse(json);
+    }
+
+    public static petLikedToJson(value: PetLiked): string {
+        return JSON.stringify(value);
+    }
 }
