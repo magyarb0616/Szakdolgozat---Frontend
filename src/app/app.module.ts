@@ -32,6 +32,10 @@ import { LikesComponent } from './likes/likes/likes.component';
 import { FooterComponent } from './footer/footer/footer.component';
 import { JwtInterceptor } from './helpers/jwtInterceptor';
 import { ProfileComponent } from './profile/profile/profile.component';
+import { MypetsComponent } from './mypets/mypets/mypets.component';
+import { SearchComponent } from './search/search/search.component';
+import { DetailviewComponent } from './detailview/detailview/detailview.component';
+import { PetregisterComponent } from './petregister/petregister/petregister.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,11 @@ import { ProfileComponent } from './profile/profile/profile.component';
     NavbarComponent,
     LikesComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    MypetsComponent,
+    SearchComponent,
+    DetailviewComponent,
+    PetregisterComponent
   ],
   imports: [
     BrowserModule,

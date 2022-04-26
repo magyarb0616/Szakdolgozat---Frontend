@@ -24,14 +24,26 @@
           <a class="nav-link active" routerLink="/likes">Likes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Search</a>
+          <a class="nav-link active" routerLink="/search">Search</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/profile">Profile</a>
+          <div mdbDropdown class="dropdown">
+            <a
+              class="nav-link active"
+              type="button"
+              id="dropdownMenuButton"
+              aria-expanded="false"
+              mdbDropdownToggle
+            >Profile</a>
+            <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" routerLink="/profile">Modify profile</a></li>
+              <li><a class="dropdown-item" routerLink="/mypets">My pets</a></li>
+            </ul>
+          </div> 
         </li>
       </ul>
-     
-      <a class="btn btn-primary btn-rounded" style="background: linear-gradient(to right, #0081a7, #00afb9);" (click)="logOut()" role="button">Log Out</a>
+      <a class="btn btn-primary btn-rounded logoutButton" routerLink="/petregister">Register pet</a>
+      <a class="btn btn-primary btn-rounded logoutButton" (click)="logOut()" role="button">Log Out</a>
     </div>
   </div>
 </nav>
