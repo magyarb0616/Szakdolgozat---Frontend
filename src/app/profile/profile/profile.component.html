@@ -1,29 +1,111 @@
-<app-navbar></app-navbar>
 <div>
+<app-navbar></app-navbar>
 
-  
+<div class="profile-panel">
+  <div class="container" id="container">
+      <div class="form-container sign-in-container">
+          <form #profileForm="ngForm" [noValidate]="false" (submit)="profileUpdateHandler(profileForm.value)">
+              <h1>Modify account information</h1>
+              <input type="text" readonly name="username" placeholder="Username" required ngModel={{user.username}}/>
+              <input type="email" name="email"  placeholder="Email" required ngModel={{user.email}}/>
+              <div class="unite">
+                  <input class="unite-input-left" type="text" name="surname" placeholder="Surname" required ngModel={{user.surname}}/>
+                  <input class="unite-input-right" type="text" name="firstname" placeholder="Firstname" required ngModel={{user.firstname}}/>
+              </div>
+              <input type="text" name="phone" placeholder="Phone number" ngModel={{user.phone}}/>
+
+              <select (change)="getCities($event)" name="country" required ngModel={{user.countryId}} >
+                <option disabled selected>Choose a country.</option>
+                  <option *ngFor="let country of countries" [ngValue]="country.id"
+                 [value]="country.id">
+                 {{country.name}}
+                </option>
+              </select>
+
+              <select name="city" required ngModel={{user.cityId}}>
+                <option disabled selected>Choose a city.</option>
+                <option *ngFor="let city of cities"  [ngValue]="city.id"
+                [value]="city.id">
+                {{city.name}}
+              </select>
+                    <button>Save</button>
+                </form>
+      </div>
+      <div class="form-container sign-up-container">
+          <form #passwordForm="ngForm" (submit)="PasswordChangeHandler(passwordForm.value)" [noValidate]="false">
+              <h1>Change password</h1>
+              <input type="password" name="oldPassword" placeholder="Old password" required ngModel/>
+              <br>
+              <input type="password" name="newPassword" placeholder="New password" required ngModel/>
+              <input type="password" name="newPasswordConfirm" placeholder="New password again" required ngModel/>
+              <button>Change password</button>
+          </form>
+      </div>
+      <div class="overlay-container">
+          <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                  <h1>Modify account information</h1>
+                  <p>Click on the back button to go back to modify your account information.</p>
+                  <button class="ghost" id="signIn" (click)="profilePanel()">Back</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                  <h1>Change your password</h1>
+                  <button class="ghost" id="signUp" (click)="passwordPanel()">Change password</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
 
 
+<app-footer></app-footer>
+</div>
 
 
 
+<!--
+
+<div class="container-md myCard">
+  <form class="pForm">
+
+    <mdb-form-control>
+      <input mdbInput type="text" name="username" class="pInput form-control form-control-lg "/>
+      <label mdbLabel class="form-label" for="formControlLg">Username</label>
+    </mdb-form-control>
+    <mdb-form-control>
+      <input mdbInput type="email" name="email" class="form-control form-control-lg pInput"/>
+      <label mdbLabel class="form-label" for="formControlLg">Email</label>
+    </mdb-form-control>
+    <mdb-form-control>
+      <input mdbInput type="password" name="password" class="form-control form-control-lg pInput"/>
+      <label mdbLabel class="form-label" for="formControlLg">Password</label>
+    </mdb-form-control>
+
+    <mdb-form-control>
+      <input mdbInput class="unite-input-left" type="text" name="surname" class="form-control form-control-lg pInput"/>
+      <label mdbLabel class="form-label" for="formControlLg">Surname</label>
+    </mdb-form-control>
+    <mdb-form-control>
+      <input mdbInput class="unite-input-right" type="text" name="firstname" class="form-control form-control-lg pInput"/>
+      <label mdbLabel class="form-label" for="formControlLg">Firstname</label>
+    </mdb-form-control>
+    <mdb-form-control>
+      <input mdbInput type="text" name="phone" class="form-control form-control-lg pInput"/>
+      <label mdbLabel class="form-label" for="formControlLg">Phone number</label>
+    </mdb-form-control>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <select>
+      <option>Choose a country</option>
+    </select>
+    <select>
+      <option>Choose a city</option>
+    </select>
+    <button>Modify</button>
+  </form>
 
 </div>
-<app-footer></app-footer>
+
+-->

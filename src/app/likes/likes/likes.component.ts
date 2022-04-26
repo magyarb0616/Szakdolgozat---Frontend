@@ -26,14 +26,16 @@ loadLikedPets(){
   })
 }
 
-deleteLike(id: string){
+async deleteLike(id: string){
 this.matchService.deleteMatch(id).subscribe(response => {
   //console.log(response);
 })
-this.loadLikedPets();
+await this.delay(500)
 this.loadLikedPets();
 }
 
-
+public delay(ms: number) {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
 }

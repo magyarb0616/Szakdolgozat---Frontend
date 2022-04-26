@@ -15,9 +15,9 @@
                 
                 
 
-                <select (change)="getCities($event)" name="country" ngModel>
-                    <option disabled>Choose a country.</option>
-                    <option *ngFor="let country of countries" [ngValue]="country"
+                <select (change)="getCities($event)" name="country" ngModel >
+                   
+                    <option *ngFor="let country of countries" [ngValue]="country.id"
                    [value]="country.id">
                    {{country.name}}
                   </option>
@@ -25,7 +25,7 @@
 
                 <select name="city" required ngModel>
                   <option disabled selected>Choose a city.</option>
-                  <option *ngFor="let city of cities" [ngValue]="city.id"
+                  <option *ngFor="let city of cities"  [ngValue]="city.id"
                   [value]="city.id">
                   {{city.name}}
                 </select>
