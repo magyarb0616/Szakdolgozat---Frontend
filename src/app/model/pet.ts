@@ -14,5 +14,6 @@ export interface Pet {
     breedName:   string;
     cityId:      string;
     cityName:    string;
+    countryId:   string;
     countryName: string;
 }

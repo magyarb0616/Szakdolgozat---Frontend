@@ -1,3 +1,29 @@
 <app-navbar></app-navbar>
-
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10px 50px 10px 50px;">
+  <div class="col" *ngFor="let pet of pets">
+    <div class="card" >
+      <div class="bg-image hover-zoom">
+        <img
+          src="https://mdbootstrap.com/img/new/standard/city/041.webp"
+          class="card-img-top"
+          alt="..."
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{pet.name}} | Age: {{pet.age}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{pet.speciesName}} - {{pet.breedName}}</li>
+        <li class="list-group-item">Hair: {{pet.hair}}</li>
+        <li class="list-group-item">Body: {{pet.size}}</li>
+        <li class="list-group-item">Movement need: {{pet.movement}}</li>
+        <li class="list-group-item">Location: {{pet.cityName}}, {{pet.countryName}}</li>
+      </ul>
+      <div class="card-body">
+        <a class="btn btn-primary btn-floating" mdbRipple [rippleUnbound]="true" rippleColor="dark" style="background: rgb(77, 77, 77);" role="button" ><i class="fas fa-edit"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+<hr><br><br><br>
 <app-footer></app-footer>
