@@ -17,7 +17,8 @@ export class LikesComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadLikedPets();
-   
+
+
   }
 
 loadLikedPets(){

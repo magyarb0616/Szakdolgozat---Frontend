@@ -13,7 +13,13 @@ export class CityService {
   constructor(private httpClient: HttpClient) { }
 
   getCities(countryId : number):Observable<any>{
-    return this.httpClient.get(environment.apiKey+"/country/cities?id="+countryId)
+    console.log(countryId);
+    return this.httpClient.get(environment.apiKey+"/country/cities?id="+countryId).pipe(
+      catchError(err => {
+        console.log(err);
+        throw err;
+      })
+    )
   }
 
 }

@@ -12,11 +12,11 @@
                     <input class="unite-input-right" type="text" name="firstname" placeholder="Firstname" required ngModel/>
                 </div>
                 <input type="text" name="phone" placeholder="Phone number" ngModel/>
-                
-                
+
+
 
                 <select (change)="getCities($event)" name="country" ngModel >
-                   
+
                     <option *ngFor="let country of countries" [ngValue]="country.id"
                    [value]="country.id">
                    {{country.name}}
@@ -28,6 +28,7 @@
                   <option *ngFor="let city of cities"  [ngValue]="city.id"
                   [value]="city.id">
                   {{city.name}}
+                  </option>
                 </select>
 
                       <button>Sign Up</button>

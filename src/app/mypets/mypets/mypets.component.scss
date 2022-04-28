@@ -1,1 +1,8 @@
 @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}

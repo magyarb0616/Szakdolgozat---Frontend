@@ -1,3 +1,218 @@
+<div>
 <app-navbar></app-navbar>
 
+  <h1>Register a pet to Petadopt</h1>
+  <div class="container-md myCard">
+    <form class="pForm" #petRegisterForm="ngForm" (submit)="petRegisterHandler(petRegisterForm.value)" [noValidate]="false">
+
+
+      <input type="text" name="name" placeholder="Name"  class="petinput" ngModel required/>
+      <input type="number" name="age" placeholder="Age" min="0" max="20"  class="petinput" ngModel required/>
+      <hr>
+      <div style="margin-top: 8px; margin-bottom: 8px;">
+        <label class="form-check-label" style="margin-right: 71px">Gender:</label>
+        <div class="form-check form-check-inline">
+
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="sexOptions"
+            id="sex1"
+            value="false"
+            ngModel
+          />
+          <label class="form-check-label" for="sex1">Female</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="sexOptions"
+            id="sex2"
+            value="true"
+            ngModel
+          />
+          <label class="form-check-label" for="sex2">Male</label>
+        </div>
+      </div>
+
+      <div style="margin-top: 8px; margin-bottom: 8px;">
+      <label class="form-check-label" style="margin-right: 67px">Pet size:</label>
+      <div class="form-check form-check-inline">
+
+        <input
+          mdbRadio
+          class="form-check-input"
+          type="radio"
+          name="sizeOptions"
+          id="size1"
+          value="1"
+          ngModel
+        />
+        <label class="form-check-label" for="size1">Small</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          mdbRadio
+          class="form-check-input"
+          type="radio"
+          name="sizeOptions"
+          id="size2"
+          value="2"
+          ngModel
+        />
+        <label class="form-check-label" for="size2" style="margin-right: 9px">Medium</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          mdbRadio
+          class="form-check-input"
+          type="radio"
+          name="sizeOptions"
+          id="size3"
+          value="3"
+          ngModel
+        />
+        <label class="form-check-label" for="size3">Large</label>
+      </div>
+    </div>
+
+      <div style="margin-top: 8px; margin-bottom: 8px;">
+        <label class="form-check-label" style="margin-right: 47px">Hair length:</label>
+        <div class="form-check form-check-inline">
+
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="hairOptions"
+            id="hair1"
+            value="1"
+            ngModel
+          />
+          <label class="form-check-label" for="hair1">Short</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="hairOptions"
+            id="hair2"
+            value="2"
+            ngModel
+          />
+          <label class="form-check-label" for="hair2">Moderate</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="hairOptions"
+            id="hair3"
+            value="3"
+            ngModel
+          />
+          <label class="form-check-label" for="hair3">Long</label>
+        </div>
+      </div>
+
+      <div style="margin-top: 8px; margin-bottom: 8px;">
+        <label class="form-check-label" style="margin-right: 10px">Movement need:</label>
+        <div class="form-check form-check-inline ">
+
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="movementOptions"
+            id="movement1"
+            value="1"
+            ngModel
+          />
+          <label class="form-check-label" for="movement1">Small</label>
+        </div>
+        <div class="form-check form-check-inline ">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="movementOptions"
+            id="movement2"
+            value="2"
+            ngModel
+          />
+          <label class="form-check-label" for="movement2">Moderate</label>
+        </div>
+        <div class="form-check form-check-inline ">
+          <input
+            mdbRadio
+            class="form-check-input"
+            type="radio"
+            name="movementOptions"
+            id="movement3"
+            value="3"
+            ngModel
+          />
+          <label class="form-check-label" for="movement3">High</label>
+        </div>
+      </div>
+      <hr>
+      <div class="unite">
+        <label class="form-check-label unite-input-left-label" for="country">Country</label>
+        <label class="form-check-label unite-input-right-label" for="city">City</label>
+      </div>
+    <div class="unite">
+
+      <select class="unite-input-left" name="country" id="country" (change)="getCities($event)" ngModel required>
+        <option disabled>Choose a country</option>
+        <option *ngFor="let country of countries"
+                [ngValue]="country.id"
+                [value]="country.id">
+          {{country.name}}
+        </option>
+      </select>
+
+      <select class="unite-input-right" name="city" id="city" ngModel required>
+        <option disabled>Choose a city</option>
+        <option *ngFor="let city of cities"
+                [ngValue]="city.id"
+                [value]="city.id">
+          {{city.name}}
+        </option>
+      </select>
+    </div>
+
+    <hr>
+
+    <div class="unite">
+      <label class="form-check-label unite-input-left-label" for="specie">Specie</label>
+      <label class="form-check-label unite-input-right-label" for="breed">Breed</label>
+    </div>
+
+
+    <div class="unite">
+      <select class="unite-input-left" name="specie" id="specie" (change)="getBreeds($event)" ngModel required>
+        <option>Choose a specie</option>
+        <option *ngFor="let specie of species"
+                [ngValue]="specie.id"
+                [value]="specie.id"> {{specie.name}} </option>
+
+      </select>
+      <select class="unite-input-right" name="breed" id="breed" ngModel required>
+        <option>Choose a breed</option>
+        <option *ngFor="let breed of breeds"
+                [ngValue]="breed.id"
+                [value]="breed.id"> {{breed.name}} </option>
+      </select>
+    </div>
+      <button>Register Pet</button>
+    </form>
+
+  </div>
+
 <app-footer></app-footer>
+</div>

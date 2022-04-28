@@ -1,1 +1,130 @@
-@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+.myCard{
+  background-color: white;
+  max-height: 80vh;
+  height: auto;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 600px;
+}
+
+h1{
+  padding-top: 25px;
+  padding-bottom: 35px;
+  text-align: center;
+}
+
+
+select {
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  transition: transform 120ms ease-in;
+
+}
+select:hover{
+  transform: scale(1.05);
+}
+
+
+.petinput {
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  transition: transform 120ms ease-in;
+}
+
+.petinput:hover{
+  transform: scale(1.05);
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #00afb9;
+  background: linear-gradient(to right, #0081a7, #00afb9);
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 12px !important;
+  font-family: unset !important;
+  line-height: initial !important;
+  font-weight: bold;
+  padding: 12px 45px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 120ms ease-in;
+  width: 100%;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+button:hover{
+  transform: scale(1.1);
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+
+.unite{
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.unite-input-left{
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 4px;
+  width: 50%;
+  transition: transform 120ms ease-in;
+}
+.unite-input-right{
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+  width: 50%;
+  transition: transform 120ms ease-in;
+}
+
+.unite-input-left-label{
+  border: none;
+  padding: 2px 2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 4px;
+  width: 50%;
+  transition: transform 120ms ease-in;
+}
+.unite-input-right-label{
+  border: none;
+  padding: 0px 2px;
+  margin-top: 0px;
+  margin-bottom:0px;
+  margin-left: 4px;
+  width: 50%;
+  transition: transform 120ms ease-in;
+}
+

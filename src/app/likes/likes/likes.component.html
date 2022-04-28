@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+<h1 class="center" *ngIf="pets.length==0" >You haven't liked any pet yet!</h1>
 <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10px 50px 10px 50px;">
   <div class="col" *ngFor="let pet of pets">
     <div class="card" >
@@ -25,7 +26,7 @@
     </div>
   </div>
 </div>
-<hr><br><br><br>
+<br><br><br><br>
 
 
 <app-footer></app-footer>
