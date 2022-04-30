@@ -3,10 +3,13 @@
 
 <div class="card-group" style="max-width:85%; margin:auto;">
 <div class="card" style="width: 18rem; margin: 5px; border-radius: 0.5rem;" *ngFor="let pet of pets">
-    <div class="bg-image hover-zoom"><img
-      src="http://cdn.akc.org/content/article-body-image/keeshond_dog_pictures.jpg"
+  <h3 class="card-title" *ngIf="(pet.picturePath.length===0)" style="height: 300px; margin-left: auto; margin-right: auto;">No picture for this pet</h3>
+    <div class="bg-image hover-zoom imgRestrict">
+      <img *ngIf="pet.picturePath.length!=0"
+      [src]="pet.picturePath"
       class="card-img-top"
       alt="..."
+      type="button" (click)="allPic(pet.id)"
     /></div>
     <div class="card-body">
       <h5 class="card-title">{{pet.name}} | Age: {{pet.age}}</h5>
@@ -22,11 +25,7 @@
       <a class="btn btn-primary btn-floating" mdbRipple [rippleUnbound]="true"
       rippleColor="red" style="background: red;" role="button" (click)="likePet(pet.id)"><i class="fas fa-heart"></i></a>
     </div>
-    
   </div>
-  
-
- 
 </div>
 
 <app-footer></app-footer>

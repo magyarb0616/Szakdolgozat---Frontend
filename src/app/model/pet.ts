@@ -16,4 +16,5 @@ export interface Pet {
     cityName:    string;
     countryId:   string;
     countryName: string;
+    picturePath: string;
 }

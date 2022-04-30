@@ -1,0 +1,26 @@
+
+<app-navbar></app-navbar>
+
+<div class="inputfiled">
+  <!--<label class="form-label" for="customFile">Upload a picture!</label>-->
+  <input type="file" class="form-control" id="customFile" (change)="onFileSelected($event)"/>
+  <button class="form-button" (click)="onUpload()">Upload selected picture</button>
+</div>
+<hr>
+
+<div class="card mb-3 card-extra" *ngFor="let image of images" style="max-width: 500px">
+  <div class="bg-image hover-zoom" >
+    <img
+    [src]="image.path"
+    class="card-img-top"
+    alt="..."
+    />
+  </div>
+
+  <div class="card-body">
+    <button (click)="deleteImage(image.id)">Delete picture</button>
+  </div>
+</div>
+
+<br><br><br><br>
+<app-footer></app-footer>

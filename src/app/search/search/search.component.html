@@ -1,3 +1,101 @@
 <app-navbar></app-navbar>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <div class="container-fluid" style="justify-content: start">
+    <a class="navbar-brand">Search</a>
 
+    <form #searchForm="ngForm" [noValidate]="false" (submit)="searchHandler(searchForm.value)">
+      <label class="form-check-label" for="specie" style="margin-right: 5px" >Specie:</label>
+      <select ngModel required name="specie" id="specie" style="margin-right: 5px" (change)="getBreeds($event)" ngModel required>
+        <option disabled>Choose a specie</option>
+        <option *ngFor="let specie of species"
+                [ngValue]="specie.id"
+                [value]="specie.id"> {{specie.name}} </option>
+
+      </select>
+
+      <label class="form-check-label" for="breed" style="margin-right: 5px">Breed:</label>
+      <select ngModel required name="breed" id="breed" ngModel required style="margin-right: 5px">
+        <option disabled>Choose a breed</option>
+        <option *ngFor="let breed of breeds"
+                [ngValue]="breed.id"
+                [value]="breed.id"> {{breed.name}} </option>
+      </select>
+
+
+      <label class="form-check-label" for="gender" style="margin-right: 5px">Gender:</label>
+      <select ngModel required name="gender" id="gender" ngModel required style="margin-right: 5px">
+        <option [ngValue]="4" [value]="4" [defaultSelected]="true">Any</option>
+        <option [ngValue]="0" [value]="0" [defaultSelected]="false">Female</option>
+        <option [ngValue]="1" [value]="1" [defaultSelected]="false">Male</option>
+      </select>
+
+
+      <label class="form-check-label" for="size" style="margin-right: 5px">Size:</label>
+      <select ngModel required name="size" id="size" ngModel required style="margin-right: 5px">
+        <option [ngValue]="0" [value]="0">Any</option>
+        <option [ngValue]="1" [value]="1">Small</option>
+        <option [ngValue]="2" [value]="2">Medium</option>
+        <option [ngValue]="3" [value]="3">Large</option>
+      </select>
+
+
+
+      <label class="form-check-label" for="hair" style="margin-right: 5px">Hair:</label>
+      <select ngModel required name="hair" id="hair" ngModel required style="margin-right: 5px">
+        <option [ngValue]="0" [value]="0">Any</option>
+        <option [ngValue]="1" [value]="1">Short</option>
+        <option [ngValue]="2" [value]="2">Moderate</option>
+        <option [ngValue]="3" [value]="3">Long</option>
+      </select>
+
+      <label class="form-check-label" for="movement" style="margin-right: 5px">Movement need:</label>
+      <select ngModel required name="movement" id="movement" ngModel required style="margin-right: 5px">
+        <option [ngValue]="0" [value]="0">Any</option>
+        <option [ngValue]="1" [value]="1">Small</option>
+        <option [ngValue]="2" [value]="2">Moderate</option>
+        <option [ngValue]="3" [value]="3">High</option>
+      </select>
+      <button>Serach</button>
+    </form>
+  </div>
+</nav>
+
+
+<br>
+
+<h1 class="center" *ngIf="pets.length==0" >No result!</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10px 50px 10px 50px;">
+  <div class="col" *ngFor="let pet of pets">
+    <div class="card" >
+      <h3 class="card-title" *ngIf="(pet.picturePath.length===0)" style="height: 300px; margin-left: auto; margin-right: auto;">No picture for this pet</h3>
+      <div class="bg-image hover-zoom imgRestrict">
+        <img *ngIf="(pet.picturePath.length!=0)"
+             [src]="pet.picturePath"
+             class="card-img-top"
+             alt="..."
+             type="button" (click)="allPic(pet.id)"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{pet.name}} | Age: {{pet.age}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{pet.speciesName}} - {{pet.breedName}}</li>
+        <li class="list-group-item">Hair: {{pet.hair}}</li>
+        <li class="list-group-item">Body: {{pet.size}}</li>
+        <li class="list-group-item">Movement need: {{pet.movement}}</li>
+        <li class="list-group-item">Location: {{pet.cityName}}, {{pet.countryName}}</li>
+      </ul>
+      <div class="card-body">
+        <a class="btn btn-primary btn-floating" mdbRipple [rippleUnbound]="true"
+           rippleColor="red" style="background: red;" role="button" (click)="likePet(pet.id)"><i class="fas fa-heart"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<br><br><br><br>
 <app-footer></app-footer>

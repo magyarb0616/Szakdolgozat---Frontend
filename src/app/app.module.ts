@@ -34,8 +34,9 @@ import { JwtInterceptor } from './helpers/jwtInterceptor';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { MypetsComponent } from './mypets/mypets/mypets.component';
 import { SearchComponent } from './search/search/search.component';
-import { DetailviewComponent } from './detailview/detailview/detailview.component';
 import { PetregisterComponent } from './petregister/petregister/petregister.component';
+import { PictureManagementComponent } from './picture-management/picture-management.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,9 @@ import { PetregisterComponent } from './petregister/petregister/petregister.comp
     ProfileComponent,
     MypetsComponent,
     SearchComponent,
-    DetailviewComponent,
-    PetregisterComponent
+    PetregisterComponent,
+    PictureManagementComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

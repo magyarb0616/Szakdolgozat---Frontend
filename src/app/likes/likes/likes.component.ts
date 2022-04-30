@@ -39,4 +39,13 @@ public delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
 }
 
+
+  allPic(id: string){
+    localStorage.setItem("sel-pet","");
+    localStorage.setItem("sel-pet",id);
+    console.log("saved id: "+id);
+    console.log("here?: "+localStorage.getItem("sel-pet"));
+    this.router.navigate(['carousel']);
+  }
+
 }

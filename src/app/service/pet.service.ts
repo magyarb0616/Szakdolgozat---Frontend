@@ -27,6 +27,8 @@ export class PetService {
     )
   }
 
+
+
   getSpecies():Observable<any> {
     return this.httpClient.get(environment.apiKey + "/species/list", this.httpOptions).pipe(
       catchError((err) => {
@@ -68,5 +70,11 @@ export class PetService {
       })
     )
   }
+
+
+  getPetImages(id: string){
+    return this.httpClient.get(environment.apiKey+"/pet/image/list?id="+id,this.httpOptions)
+  }
+
 
 }

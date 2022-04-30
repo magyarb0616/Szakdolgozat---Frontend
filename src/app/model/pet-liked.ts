@@ -1,22 +1,25 @@
 export interface PetLiked {
-    id:          string;
-    petId:       string;
-    adopterId:   string;
-    adoptiveId:  string;
-    name:        string;
-    age:         string;
-    sex:         string;
-    size:        string;
-    hair:        string;
-    movement:    string;
-    description: string;
-    speciesId:   string;
-    speciesName: string;
-    breedId:     string;
-    breedName:   string;
-    cityId:      string;
-    cityName:    string;
-    countryName: string;
+    id:           string;
+    petId:        string;
+    adopterId:    string;
+    adoptiveId:   string;
+    name:         string;
+    age:          string;
+    sex:          string;
+    size:         string;
+    hair:         string;
+    movement:     string;
+    description:  string;
+    speciesId:    string;
+    speciesName:  string;
+    breedId:      string;
+    breedName:    string;
+    cityId:       string;
+    cityName:     string;
+    countryName:  string;
+    picturePath:  string;
+    contactEmail: string;
+    contactPhone: string;
 }
 
 // Converts JSON strings to/from to petLiked

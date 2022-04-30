@@ -3,11 +3,13 @@
 <div class="row row-cols-1 row-cols-md-3 g-4" style="margin: 10px 50px 10px 50px;">
   <div class="col" *ngFor="let pet of pets">
     <div class="card" >
-      <div class="bg-image hover-zoom">
-        <img
-          src="https://mdbootstrap.com/img/new/standard/city/041.webp"
+      <h3 class="card-title" *ngIf="(pet.picturePath.length===0)" style="height: 300px; margin-left: auto; margin-right: auto;">No picture for this pet</h3>
+      <div class="bg-image hover-zoom imgRestrict">
+        <img *ngIf="(pet.picturePath.length!=0)"
+          [src]="pet.picturePath"
           class="card-img-top"
           alt="..."
+             type="button" (click)="allPic(pet.id)"
         />
       </div>
       <div class="card-body">
@@ -21,8 +23,8 @@
         <li class="list-group-item">Location: {{pet.cityName}}, {{pet.countryName}}</li>
       </ul>
       <div class="card-body">
-        <a class="btn btn-primary btn-floating" mdbRipple [rippleUnbound]="true" rippleColor="dark" style="background: rgb(77, 77, 77); margin-right: 10px " role="button" ><i class="fas fa-edit"></i></a>
-        <a class="btn btn-primary btn-floating" mdbRipple [rippleUnbound]="true" rippleColor="dark" style="background: rgb(77, 77, 77); margin-right: 10px " role="button" ><i class="fas fa-trash"></i></a>
+        <a class="btn btn-primary btn-floating" (click)="navToPetPic(pet.id)" mdbRipple [rippleUnbound]="true" rippleColor="dark" style="background: rgb(77, 77, 77); margin-right: 10px " role="button" ><i class="fas fa-image"></i></a>
+        <a class="btn btn-primary btn-floating"  (click)="deletePet(pet.id)"  mdbRipple [rippleUnbound]="true" rippleColor="dark" style="background: rgb(77, 77, 77); margin-right: 10px " role="button" ><i class="fas fa-trash"></i></a>
 
       </div>
     </div>

@@ -1,5 +1,11 @@
 @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
-
+.imgRestrict{
+  max-height: 350px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 

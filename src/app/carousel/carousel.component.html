@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<h1 *ngIf="images.length===0">No pictures for this pet</h1>
+<mdb-carousel [controls]="true" [indicators]="true" [wrap]="false" [dark]="true" *ngIf="images.length!=0"
+class="carouselMy">
+  <mdb-carousel-item *ngFor="let image of images">
+    <img
+      [src]=image.path
+      class="d-block"
+      alt="..."
+      style="height:85vh; margin-right: auto; margin-left: auto;"
+    />
+  </mdb-carousel-item>
+</mdb-carousel>
+
+
+<app-footer></app-footer>

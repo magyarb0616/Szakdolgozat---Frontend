@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private petService: PetService,
     private matchService: MatchService,
-    private httpClient: HttpClient    
+    private httpClient: HttpClient
     ) { }
 
   ngOnInit(): void {
@@ -39,6 +39,12 @@ export class HomeComponent implements OnInit {
     })
  }
 
-
+  allPic(id: string){
+    localStorage.setItem("sel-pet","");
+    localStorage.setItem("sel-pet",id);
+    console.log("saved id: "+id);
+    console.log("here?: "+localStorage.getItem("sel-pet"));
+    this.router.navigate(['carousel']);
+  }
 
 }
